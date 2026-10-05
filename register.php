@@ -1,0 +1,114 @@
+<?php
+include 'config.php';
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $fullname = $_POST['fullname'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    // Insert user into database
+    $sql = "INSERT INTO users (fullname, email, password) VALUES ('$fullname', '$email', '$password')";
+
+    if ($conn->query($sql) === TRUE) {
+        echo "<script>alert('Registration Successful! Please Login.'); window.location.href='login.php';</script>";
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Trip Management</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background-color: #f4f7f6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .register-container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+        h2 {
+            margin-bottom: 20px;
+            color: #333;
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #666;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .btn {
+            background-color: #0056b3;
+            color: white;
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .btn:hover {
+            background-color: #004494;
+        }
+        .login-link {
+            text-align: center;
+            margin-top: 15px;
+            display: block;
+            color: #0056b3;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="register-container">
+        <h2>Create Account</h2>
+        <form action="register.php" method="post">
+            <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" name="fullname" placeholder="Enter your full name" required>
+            </div>
+            <div class="form-group">
+                <label>Email Address</label>
+                <input type="email" name="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" name="password" placeholder="Create a password" required>
+            </div>
+            <button type="submit" class="btn">Register</button>
+            <a href="#" class="login-link">Already have an account? Login</a>
+        </form>
+    </div>
+
+</body>
+</html>

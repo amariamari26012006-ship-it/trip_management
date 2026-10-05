@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Your Trip - Trip Management</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background-color: #f4f7f6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .booking-container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 500px;
+        }
+        h2 {
+            margin-bottom: 25px;
+            color: #0056b3;
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #666;
+            font-weight: bold;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        textarea {
+            resize: vertical;
+            height: 80px;
+        }
+        .row {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .btn {
+            background-color: #28a745;
+            color: white;
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: 0.3s;
+        }
+        .btn:hover {
+            background-color: #218838;
+        }
+        .back-link {
+            text-align: center;
+            margin-top: 15px;
+            display: block;
+            color: #0056b3;
+            text-decoration: none;
+        }
+      form, .row, .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+}
+    </style>
+</head>
+<body>
+<div class="booking-container">
+        <h2>Book Your Trip</h2>
+        <form action="booking.php" method="post">
+            
+            <div class="form-group">
+                <label for="package_name">Select Trip Package</label>
+                <select name="package_name" id="package_name" required>
+                    <option value="">-- Choose a Package --</option>
+                    <option value="Ooty Tour">Ooty Tour Package</option>
+                    <option value="Goa Beach Tour">Goa Beach Tour Package</option>
+                    <option value="Kerala Backwaters">Kerala Backwaters Package</option>
+                    <option value="Chennai City Tour">Chennai City Tour Package</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Contact Number</label>
+                <input type="tel" name="phone" placeholder="Enter your mobile number" required>
+            </div>
+
+            <div class="form-group">
+                <label>Journey Date</label>
+                <input type="date" name="journey_date" required>
+            </div>
+
+            <div class="form-group">
+                <label>No. of Persons</label>
+                <input type="number" name="guests" min="1" max="10" value="1" required>
+            </div>
+
+            <div class="form-group">
+                <label>Special Instructions (Optional)</label>
+                <textarea name="instructions" placeholder="Any specific requirements..."></textarea>
+            </div>
+
+            <button type="submit" class="btn">Confirm & Book Now</button>
+            <a href="index.html" class="back-link">Back to Packages</a>
+
+        </form>
+    </div>

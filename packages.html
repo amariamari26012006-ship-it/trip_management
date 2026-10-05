@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trip Packages - Trip Management</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        header {
+            background-color: #0056b3;
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: bold;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        h2.title {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #333;
+        }
+        .packages-grid {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            width: 320px;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .card-content {
+            padding: 20px;
+        }
+        .card-content h3 {
+            margin-bottom: 10px;
+            color: #0056b3;
+        }
+        .card-content p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+        .price {
+            font-size: 18px;
+            font-weight: bold;
+            color: #28a745;
+            margin-bottom: 15px;
+        }
+        .book-btn {
+            display: block;
+            text-align: center;
+            background: #ffc107;
+            color: #333;
+            padding: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+        .book-btn:hover { background: #e0a800; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h2>✈️ Trip Management</h2>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="packages.html">Trip Packages</a>
+            <a href="#">About Us</a>
+            <a href="#">Contact</a>
+            <a href="login.html">Login</a>
+            <a href="register.html">Register</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h2 class="title">Our Popular Trip Packages</h2>
+        <div class="packages-grid">
+
+            <!-- Card 1 -->
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=500&q=80" alt="Taj Mahal">
+                <div class="card-content">
+                    <h3>Agra Wonders</h3>
+                    <p>Explore the symbol of love, the Taj Mahal, and experience the rich Mughal history and local markets.</p>
+                    <div class="price">₹4,999 / Person</div>
+                    <a href="booking.html" class="book-btn">Book Package</a>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=500&q=80" alt="Goa Beach">
+                <div class="card-content">
+                    <h3>Goa Beach Party</h3>
+                    <p>Relax on beautiful sunny beaches, enjoy thrilling water sports, and experience the crazy nightlife of Goa.</p>
+                    <div class="price">₹7,500 / Person</div>
+                    <a href="#" class="book-btn">Book Package</a>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1593693397690-362cb9666fc2?auto=format&fit=crop&w=500&q=80" alt="Kerala Backwaters">
+                <div class="card-content">
+                    <h3>Kerala Backwaters</h3>
+                    <p>Experience paradise in God's own country with serene houseboat cruises, greenery, and authentic food.</p>
+                    <div class="price">₹8,999 / Person</div>
+                    <a href="#" class="book-btn">Book Package</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
